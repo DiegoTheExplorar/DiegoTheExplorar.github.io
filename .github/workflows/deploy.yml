@@ -21,19 +21,14 @@ jobs:
           node-version: '18'
           cache: 'npm'
           
-      - name: Navigate to portfolio directory
-        run: cd portfolio
-
       - name: Install Dependencies
-        working-directory: ./portfolio
         run: npm install --legacy-peer-deps
 
       - name: Build
-        working-directory: ./portfolio
         run: npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: portfolio/dist  # The folder the action should deploy
+          folder: dist  # The folder the action should deploy
           branch: gh-pages  # The branch the action should deploy to 
