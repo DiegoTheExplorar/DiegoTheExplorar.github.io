@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/DiegoTheExplorar.github.io/', // Change YOURUSERNAME to your actual GitHub username
+  base: '/', // This is the correct value if using username.github.io repository
 })
