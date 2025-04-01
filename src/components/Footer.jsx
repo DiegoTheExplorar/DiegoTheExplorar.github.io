@@ -51,7 +51,7 @@ const Footer = () => {
           <SocialLink href="https://www.linkedin.com/in/arvind-natarajan-65aa77290/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </SocialLink>
-          <SocialLink href="mailto:arvindnatarajan@gmail.com">
+          <SocialLink href="mailto:arvindnatarajan2002@gmail.com">
             <FaEnvelope />
           </SocialLink>
         </SocialLinks>

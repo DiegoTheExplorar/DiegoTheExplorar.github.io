@@ -185,10 +185,8 @@ const Experience = () => {
       location: "Singapore",
       period: "Dec 2023 - Present",
       description: [
-        "Outperformed an outsourced team, delivering solutions 4x faster and reducing costs",
-        "Developing a computer vision solution using 2D and 3D pose estimation for patient mobility and fall risk assessment",
-        "Developing an Apple Vision Pro application using 3D and 2D pose data for mobility assessment visualization",
-        "Leading the development of AI-powered healthcare solutions"
+        "Developing in Kotlin Multiplatform Mobile applications targeting iOS",
+        "Developing a computer vision solutions"
       ],
       icon: <FaRobot />,
       position: 'left'
