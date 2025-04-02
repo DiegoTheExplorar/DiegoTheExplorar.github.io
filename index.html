@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arvind Natarajan | AI Engineer & Full Stack Developer</title>
     <meta name="description" content="Arvind Natarajan" />
-    <script type="module" crossorigin src="/DiegoTheExplorar.github.io/assets/index-2e41ccef.js"></script>
-    <link rel="stylesheet" href="/DiegoTheExplorar.github.io/assets/index-9adc92c7.css">
+    <script>
+      // Check if we need to redirect
+      const redirect = sessionStorage.getItem('redirect');
+      if (redirect) {
+        // Remove the redirect from session storage
+        sessionStorage.removeItem('redirect');
+        // Push the path to history
+        window.history.replaceState(null, null, redirect);
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-3bc3af62.js"></script>
+    <link rel="stylesheet" href="/assets/index-9adc92c7.css">
   </head>
   <body>
     <div id="root"></div>
