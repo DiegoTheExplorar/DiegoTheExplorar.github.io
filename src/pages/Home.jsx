@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import Typewriter from '../components/TypewriterText';
-import HomeParticles from '../components/HomeParticles';
+import ThreeParticles from '../components/ThreeParticles';
+
 
 const HomeContainer = styled.section`
   min-height: 100vh;
@@ -186,7 +187,8 @@ const BackgroundDecoration = styled.div`
 const Home = () => {
   return (
     <HomeContainer>
-      <HomeParticles />
+      <ThreeParticles />
+
 
       <HomeContent>
         <Name
