@@ -7,5 +7,5 @@ export default defineConfig({
     host: true 
   },
   plugins: [react()],
-  base: '/DiegoTheExplorar.github.io/', // This is the correct value if your repo is not username.github.io
+  base: '/', // This is the correct value if your repo is not username.github.io
 })
