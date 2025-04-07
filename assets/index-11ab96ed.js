@@ -4680,7 +4680,7 @@ No matching component was found for:
   width: ${t=>t.width}%;
 `,g$=[{category:"Programming Languages",icon:F.jsx(SR,{}),skills:[{name:"Python",level:90,icon:F.jsx(_R,{})},{name:"Kotlin",level:85,icon:F.jsx(SY,{})},{name:"Java",level:80,icon:F.jsx(jF,{})},{name:"JavaScript",level:85,icon:F.jsx(XF,{})},{name:"C++",level:70,icon:F.jsx(xY,{})}]},{category:"Frameworks & Tools",icon:F.jsx(t7,{}),skills:[{name:"React",level:85,icon:F.jsx(Dx,{})},{name:"Firebase",level:80,icon:F.jsx(QL,{})},{name:"PyTorch",level:85,icon:F.jsx(e6,{})},{name:"Hugging Face",level:80,icon:F.jsx(Nx,{})},{name:"Flask",level:75,icon:F.jsx(_Y,{})}]},{category:"DevOps & Cloud",icon:F.jsx(n7,{}),skills:[{name:"Docker",level:80,icon:F.jsx(WF,{})},{name:"CI/CD",level:75,icon:F.jsx(Sm,{})},{name:"Kubernetes",level:70,icon:F.jsx(Sm,{})},{name:"Azure",level:75,icon:F.jsx(Ux,{})},{name:"Git",level:90,icon:F.jsx(Sm,{})}]},{category:"AI & ML Concepts",icon:F.jsx(So,{}),skills:[{name:"Machine Learning",level:85,icon:F.jsx(So,{})},{name:"Deep Learning",level:80,icon:F.jsx(So,{})},{name:"Diffusion Models",level:75,icon:F.jsx(So,{})},{name:"RAG",level:80,icon:F.jsx(So,{})},{name:"Computer Vision",level:85,icon:F.jsx(So,{})}]}],v$=()=>{const t=Fz(),[e,n]=s$({threshold:.2,triggerOnce:!0});B.useEffect(()=>{n&&t.start("visible")},[t,n]);const i={hidden:{opacity:0},visible:{opacity:1,transition:{staggerChildren:.2}}},r={hidden:{opacity:0,y:20},visible:{opacity:1,y:0,transition:{duration:.5}}},s={hidden:{width:0},visible:o=>({width:`${o}%`,transition:{duration:1,ease:"easeOut"}})};return F.jsx(o$,{id:"skills",children:F.jsxs(a$,{children:[F.jsx(l$,{initial:{opacity:0,y:-20},animate:{opacity:1,y:0},transition:{duration:.5},children:"Skills"}),F.jsx(c$,{initial:{opacity:0},animate:{opacity:1},transition:{duration:.5,delay:.2},children:"My technical toolkit spans languages, frameworks, and core concepts in software development and artificial intelligence."}),F.jsx(u$,{ref:e,variants:i,initial:"hidden",animate:t,children:g$.map((o,a)=>F.jsxs(f$,{variants:r,children:[F.jsxs(h$,{children:[F.jsx("div",{className:"icon",children:o.icon}),F.jsx("h3",{children:o.category})]}),F.jsx(d$,{children:o.skills.map((l,f)=>F.jsxs(p$,{variants:r,children:[F.jsxs("div",{className:"skill-header",children:[F.jsxs("div",{className:"skill-name",children:[l.icon," ",l.name]}),F.jsxs("div",{className:"skill-level",children:[l.level,"%"]})]}),F.jsx("div",{className:"progress-container",children:F.jsx(m$,{custom:l.level,variants:s,initial:"hidden",animate:t})})]},f))})]},a))})]})})},y$=Ce.section`
   padding: 60px 20px;
-  
+
   @media (max-width: 768px) {
     padding: 40px 20px;
   }
@@ -4692,7 +4692,7 @@ No matching component was found for:
   margin-bottom: 30px;
   text-align: center;
   position: relative;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -4714,7 +4714,7 @@ No matching component was found for:
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -4724,7 +4724,7 @@ No matching component was found for:
   overflow: hidden;
   box-shadow: var(--box-shadow);
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-10px);
   }
@@ -4733,7 +4733,7 @@ No matching component was found for:
   padding: 20px;
   display: flex;
   align-items: center;
-  
+
   .icon {
     width: 50px;
     height: 50px;
@@ -4746,38 +4746,38 @@ No matching component was found for:
     color: white;
     font-size: 1.5rem;
   }
-  
+
   h3 {
     color: white;
     font-size: 1.3rem;
   }
 `,T$=Ce.div`
   padding: 25px;
-  
+
   h4 {
     margin-bottom: 10px;
     font-size: 1.1rem;
     color: var(--primary-color);
   }
-  
+
   p {
     margin-bottom: 15px;
     line-height: 1.6;
   }
-  
+
   .date {
     font-size: 0.9rem;
     color: var(--accent-color);
     margin-bottom: 20px;
     display: block;
   }
-  
+
   .skills {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 20px;
-    
+
     span {
       background-color: rgba(97, 219, 251, 0.1);
       color: var(--primary-color);
@@ -4798,13 +4798,13 @@ No matching component was found for:
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-  
+
   svg {
     margin-left: 8px;
   }
-  
+
   &:hover {
     background-color: var(--primary-color);
     color: var(--dark-text);
   }
-`,C$=()=>{const t=[{title:"Orbital Achievement - Apollo 11",issuer:"National University of Singapore",date:"Aug 2023",description:"Developed Klingon Heads, an AI-powered English to Klingon translator web application. Achieved Apollo 11 level (Highest Level) for exceptional project quality and innovation.",skills:["React","PyTorch","Transformers","Machine Learning"],certificateLink:"https://credentials.nus.edu.sg/bd28519f-4ea2-4c99-bd7a-5d9fcacb34cc"},{title:"DevOps, MLOps, and DataOps",issuer:"Duke University",date:"January 2023",description:"A comprehensive specialization covering CI/CD, containerization, model deployment, and infrastructure management.",skills:["CI/CD","Docker","Kubernetes","MLOps","Model Deployment"],certificateLink:"https://www.coursera.org/account/accomplishments/verify/YPN57DOJ9BS6"}],e={hidden:{opacity:0},visible:{opacity:1,transition:{staggerChildren:.2}}},n={hidden:{opacity:0,y:30},visible:{opacity:1,y:0,transition:{duration:.5,ease:"easeOut"}}};return F.jsx(y$,{id:"certifications",children:F.jsxs(x$,{children:[F.jsx(_$,{initial:{opacity:0,y:-20},animate:{opacity:1,y:0},transition:{duration:.5},children:"Certifications"}),F.jsx(S$,{initial:{opacity:0},animate:{opacity:1},transition:{duration:.5,delay:.2},children:"Continuous learning is essential in the tech industry. Here are some of the certifications I've earned to enhance my skills and knowledge."}),F.jsx(M$,{variants:e,initial:"hidden",animate:"visible",children:t.map(i=>F.jsxs(w$,{variants:n,children:[F.jsxs(E$,{children:[F.jsx("div",{className:"icon",children:F.jsx(KF,{})}),F.jsx("h3",{children:i.title})]}),F.jsxs(T$,{children:[F.jsx("h4",{children:i.issuer}),F.jsx("span",{className:"date",children:i.date}),F.jsx("p",{children:i.description}),F.jsx("div",{className:"skills",children:i.skills.map((r,s)=>F.jsx("span",{children:r},s))}),F.jsxs(A$,{href:i.certificateLink,target:"_blank",rel:"noopener noreferrer",children:["View Certificate ",F.jsx(MR,{})]})]})]},i.title))})]})})};const b$=()=>F.jsxs(v8,{children:[F.jsx(h7,{}),F.jsx("div",{className:"app-container",children:F.jsx("main",{className:"main-content",children:F.jsx(Y2,{mode:"wait",children:F.jsxs(u8,{children:[F.jsx(mo,{path:"/",element:F.jsx(cY,{})}),F.jsx(mo,{path:"/about",element:F.jsx(yY,{})}),F.jsx(mo,{path:"/projects",element:F.jsx(kY,{})}),F.jsx(mo,{path:"/experience",element:F.jsx(GY,{})}),F.jsx(mo,{path:"/education",element:F.jsx(QY,{})}),F.jsx(mo,{path:"/skills",element:F.jsx(v$,{})}),F.jsx(mo,{path:"/certifications",element:F.jsx(C$,{})})]})})})}),F.jsx(v7,{})]});gy.createRoot(document.getElementById("root")).render(F.jsx(di.StrictMode,{children:F.jsx(b$,{})}));
+`,C$=()=>{const t=[{title:"Orbital Achievement - Apollo 11",issuer:"National University of Singapore",date:"Aug 2023",description:"Developed Klingon Heads, an AI-powered English to Klingon translator web application. Achieved Apollo 11 level (Highest Level) for exceptional project quality and innovation.",skills:["React","PyTorch","Transformers","Machine Learning"],certificateLink:"https://credentials.nus.edu.sg/bd28519f-4ea2-4c99-bd7a-5d9fcacb34cc"},{title:"DevOps, MLOps, and DataOps",issuer:"Duke University",date:"January 2023",description:"A comprehensive specialization covering CI/CD, containerization, model deployment, and infrastructure management.",skills:["CI/CD","Docker","Kubernetes","MLOps","Model Deployment"],certificateLink:"https://www.coursera.org/account/accomplishments/verify/YPN57DOJ9BS6"},{title:"NUS Health HacK 2025 - Top 3 (InterSystems Track)",issuer:"NUS Health Hackathon / InterSystems",date:"Feb 2025",description:"Won Top 3 for the InterSystems track. Developed an end-to-end project enabling patients to perform exercises (tracked using Mediapipe's landmark model) with a clinician portal for performance tracking, powered by InterSystems IRIS Search.",skills:["Mediapipe","InterSystems IRIS","Computer Vision","Healthcare IT","React"],certificateLink:"https://www.credly.com/badges/2c24b802-02ec-47b6-b7e2-e8f6b2f184da/public_url"}],e={hidden:{opacity:0},visible:{opacity:1,transition:{staggerChildren:.2}}},n={hidden:{opacity:0,y:30},visible:{opacity:1,y:0,transition:{duration:.5,ease:"easeOut"}}};return F.jsx(y$,{id:"certifications",children:F.jsxs(x$,{children:[F.jsx(_$,{initial:{opacity:0,y:-20},animate:{opacity:1,y:0},transition:{duration:.5},children:"Certifications & Achievements"}),F.jsx(S$,{initial:{opacity:0},animate:{opacity:1},transition:{duration:.5,delay:.2},children:"Continuous learning and practical application are essential. Here are some of the certifications and achievements I've earned to enhance my skills and knowledge."}),F.jsx(M$,{variants:e,initial:"hidden",animate:"visible",children:t.map(i=>F.jsxs(w$,{variants:n,children:[F.jsxs(E$,{children:[F.jsx("div",{className:"icon",children:F.jsx(KF,{})}),F.jsx("h3",{children:i.title})]}),F.jsxs(T$,{children:[F.jsx("h4",{children:i.issuer}),F.jsx("span",{className:"date",children:i.date}),F.jsx("p",{children:i.description}),F.jsx("div",{className:"skills",children:i.skills.map((r,s)=>F.jsx("span",{children:r},s))}),F.jsxs(A$,{href:i.certificateLink,target:"_blank",rel:"noopener noreferrer",children:["View Certificate ",F.jsx(MR,{})]})]})]},i.title))})]})})};const b$=()=>F.jsxs(v8,{children:[F.jsx(h7,{}),F.jsx("div",{className:"app-container",children:F.jsx("main",{className:"main-content",children:F.jsx(Y2,{mode:"wait",children:F.jsxs(u8,{children:[F.jsx(mo,{path:"/",element:F.jsx(cY,{})}),F.jsx(mo,{path:"/about",element:F.jsx(yY,{})}),F.jsx(mo,{path:"/projects",element:F.jsx(kY,{})}),F.jsx(mo,{path:"/experience",element:F.jsx(GY,{})}),F.jsx(mo,{path:"/education",element:F.jsx(QY,{})}),F.jsx(mo,{path:"/skills",element:F.jsx(v$,{})}),F.jsx(mo,{path:"/certifications",element:F.jsx(C$,{})})]})})})}),F.jsx(v7,{})]});gy.createRoot(document.getElementById("root")).render(F.jsx(di.StrictMode,{children:F.jsx(b$,{})}));
