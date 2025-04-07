@@ -5,7 +5,7 @@ import { FaCertificate, FaExternalLinkAlt } from 'react-icons/fa';
 
 const CertificationsContainer = styled.section`
   padding: 60px 20px;
-  
+
   @media (max-width: 768px) {
     padding: 40px 20px;
   }
@@ -21,7 +21,7 @@ const SectionTitle = styled(motion.h2)`
   margin-bottom: 30px;
   text-align: center;
   position: relative;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -47,7 +47,7 @@ const CertificationsGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -59,7 +59,7 @@ const CertificationCard = styled(motion.div)`
   overflow: hidden;
   box-shadow: var(--box-shadow);
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-10px);
   }
@@ -70,7 +70,7 @@ const CertificateHeader = styled.div`
   padding: 20px;
   display: flex;
   align-items: center;
-  
+
   .icon {
     width: 50px;
     height: 50px;
@@ -83,7 +83,7 @@ const CertificateHeader = styled.div`
     color: white;
     font-size: 1.5rem;
   }
-  
+
   h3 {
     color: white;
     font-size: 1.3rem;
@@ -92,31 +92,31 @@ const CertificateHeader = styled.div`
 
 const CertificateBody = styled.div`
   padding: 25px;
-  
+
   h4 {
     margin-bottom: 10px;
     font-size: 1.1rem;
     color: var(--primary-color);
   }
-  
+
   p {
     margin-bottom: 15px;
     line-height: 1.6;
   }
-  
+
   .date {
     font-size: 0.9rem;
     color: var(--accent-color);
     margin-bottom: 20px;
     display: block;
   }
-  
+
   .skills {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 20px;
-    
+
     span {
       background-color: rgba(97, 219, 251, 0.1);
       color: var(--primary-color);
@@ -139,11 +139,11 @@ const ViewCertificateLink = styled.a`
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-  
+
   svg {
     margin-left: 8px;
   }
-  
+
   &:hover {
     background-color: var(--primary-color);
     color: var(--dark-text);
@@ -167,9 +167,19 @@ const Certifications = () => {
       description: 'A comprehensive specialization covering CI/CD, containerization, model deployment, and infrastructure management.',
       skills: ['CI/CD', 'Docker', 'Kubernetes', 'MLOps', 'Model Deployment'],
       certificateLink: 'https://www.coursera.org/account/accomplishments/verify/YPN57DOJ9BS6'
+    },
+    // START: Added Certification
+    {
+      title: 'NUS Health HacK 2025 - Top 3 (InterSystems Track)',
+      issuer: 'NUS Health Hackathon / InterSystems',
+      date: 'Feb 2025', // <-- Adjust month if needed
+      description: 'Won Top 3 for the InterSystems track. Developed an end-to-end project enabling patients to perform exercises (tracked using Mediapipe\'s landmark model) with a clinician portal for performance tracking, powered by InterSystems IRIS Search.',
+      skills: ['Mediapipe', 'InterSystems IRIS', 'Computer Vision', 'Healthcare IT', 'React'], // <-- Adjust skills if needed
+      certificateLink: 'https://www.credly.com/badges/2c24b802-02ec-47b6-b7e2-e8f6b2f184da/public_url'
     }
+    // END: Added Certification
   ];
-  
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -180,11 +190,11 @@ const Certifications = () => {
       }
     }
   };
-  
+
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.5,
@@ -192,7 +202,7 @@ const Certifications = () => {
       }
     }
   };
-  
+
   return (
     <CertificationsContainer id="certifications">
       <CertificationsContent>
@@ -201,18 +211,18 @@ const Certifications = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Certifications
+          Certifications & Achievements
         </SectionTitle>
-        
+
         <CertificationsDescription
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Continuous learning is essential in the tech industry. Here are some of the certifications 
-          I've earned to enhance my skills and knowledge.
+          Continuous learning and practical application are essential. Here are some of the certifications
+          and achievements I've earned to enhance my skills and knowledge.
         </CertificationsDescription>
-        
+
         <CertificationsGrid
           variants={containerVariants}
           initial="hidden"
@@ -220,7 +230,7 @@ const Certifications = () => {
         >
           {certificationsData.map((certification) => (
             <CertificationCard
-              key={certification.title}
+              key={certification.title} // Ensure titles are unique or use another key
               variants={itemVariants}
             >
               <CertificateHeader>
@@ -229,18 +239,18 @@ const Certifications = () => {
                 </div>
                 <h3>{certification.title}</h3>
               </CertificateHeader>
-              
+
               <CertificateBody>
                 <h4>{certification.issuer}</h4>
                 <span className="date">{certification.date}</span>
                 <p>{certification.description}</p>
-                
+
                 <div className="skills">
                   {certification.skills.map((skill, index) => (
                     <span key={index}>{skill}</span>
                   ))}
                 </div>
-                
+
                 <ViewCertificateLink href={certification.certificateLink} target="_blank" rel="noopener noreferrer">
                   View Certificate <FaExternalLinkAlt />
                 </ViewCertificateLink>
@@ -253,4 +263,4 @@ const Certifications = () => {
   );
 };
 
-export default Certifications; 
+export default Certifications;
