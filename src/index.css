@@ -1,15 +1,25 @@
 :root {
-  --primary-color: #61dbfb; /* React blue */
-  --secondary-color: #282c34; /* Dark background */
-  --accent-color: #ff6b6b; /* Accent for highlights */
-  --text-color: #f5f5f5; /* Light text */
-  --dark-text: #333; /* Dark text for light backgrounds */
-  --bg-color: #121212; /* Very dark background */
-  --card-bg: #1e1e1e; /* Slightly lighter than bg for cards */
+  --primary-color: #61dbfb;
+  /* React blue */
+  --secondary-color: #282c34;
+  /* Dark background */
+  --accent-color: #ff6b6b;
+  /* Accent for highlights */
+  --text-color: #f5f5f5;
+  /* Light text */
+  --dark-text: #333;
+  /* Dark text for light backgrounds */
+  --bg-color: #121212;
+  /* Very dark background */
+  --card-bg: #1e1e1e;
+  /* Slightly lighter than bg for cards */
   --navbar-height: 70px;
   --section-padding: 100px 0;
   --transition-speed: 0.3s;
   --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --footer-bg: #0a0a0a;
+  --light-text: #e0e0e0;
+  --border-color: #333333;
 }
 
 * {
@@ -61,7 +71,12 @@ section {
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 1rem;
   line-height: 1.2;
 }
@@ -109,6 +124,7 @@ p {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -125,6 +141,7 @@ p {
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -136,11 +153,11 @@ p {
   h1 {
     font-size: 2.5rem;
   }
-  
+
   h2 {
     font-size: 2rem;
   }
-  
+
   section {
     padding: 70px 0;
   }
@@ -150,7 +167,7 @@ p {
   h1 {
     font-size: 2rem;
   }
-  
+
   h2 {
     font-size: 1.7rem;
   }

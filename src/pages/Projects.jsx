@@ -5,37 +5,8 @@ import { FaGithub, FaExternalLinkAlt, FaPython, FaReact, FaRobot, FaTelegram, Fa
 import { SiPytorch, SiFirebase } from 'react-icons/si';
 import { FaTools } from 'react-icons/fa';
 
-const ProjectsContainer = styled.section`
-  min-height: 100vh;
-  padding: 100px 20px;
-  
-  @media (max-width: 768px) {
-    padding: 80px 20px;
-  }
-`;
-
-const ProjectsContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-`;
-
-const SectionTitle = styled(motion.h2)`
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  text-align: center;
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -15px;
-    width: 80px;
-    height: 4px;
-    background: var(--primary-color);
-  }
-`;
+import { Section, Container, SectionTitle } from '../components/common/Layout';
+import SEO from '../components/common/SEO';
 
 const ProjectFilter = styled.div`
   display: flex;
@@ -45,8 +16,8 @@ const ProjectFilter = styled.div`
 `;
 
 const FilterButton = styled.button`
-  background: ${props => props.active ? 'var(--primary-color)' : 'var(--card-bg)'};
-  color: ${props => props.active ? 'var(--dark-text)' : 'var(--text-color)'};
+  background: ${props => props.$active ? 'var(--primary-color)' : 'var(--card-bg)'};
+  color: ${props => props.$active ? 'var(--dark-text)' : 'var(--text-color)'};
   border: none;
   padding: 10px 20px;
   margin: 0 10px 10px 0;
@@ -56,7 +27,7 @@ const FilterButton = styled.button`
   font-weight: 500;
   
   &:hover {
-    background: ${props => props.active ? 'var(--primary-color)' : 'rgba(97, 219, 251, 0.2)'};
+    background: ${props => props.$active ? 'var(--primary-color)' : 'rgba(97, 219, 251, 0.2)'};
   }
 `;
 
@@ -189,7 +160,14 @@ const NoResults = styled.div`
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
-  
+
+  const categories = [
+    { id: 'all', label: 'All' },
+    { id: 'ai', label: 'AI/ML' },
+    { id: 'web', label: 'Web' },
+    { id: 'mobile', label: 'Telegram' } // adjusting label based on previous 'Mobile' or 'Telegram' context? Previous code had 'Mobile' label for 'mobile' filter.
+  ];
+
   const projectsData = [
     {
       id: 1,
@@ -237,12 +215,12 @@ const Projects = () => {
       live: null
     }
   ];
-  
+
   // Filter projects based on selected category
-  const filteredProjects = filter === 'all' 
-    ? projectsData 
+  const filteredProjects = filter === 'all'
+    ? projectsData
     : projectsData.filter(project => project.category.includes(filter));
-  
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -253,21 +231,22 @@ const Projects = () => {
       }
     }
   };
-  
+
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.4
       }
     }
   };
-  
+
   return (
-    <ProjectsContainer id="projects">
-      <ProjectsContent>
+    <Section id="projects">
+      <SEO title="Projects" description="Explore my portfolio of AI, Web, and Mobile projects." />
+      <Container>
         <SectionTitle
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -275,34 +254,19 @@ const Projects = () => {
         >
           Projects
         </SectionTitle>
-        
+
         <ProjectFilter>
-          <FilterButton 
-            active={filter === 'all'} 
-            onClick={() => setFilter('all')}
-          >
-            All
-          </FilterButton>
-          <FilterButton 
-            active={filter === 'ai'} 
-            onClick={() => setFilter('ai')}
-          >
-            AI/ML
-          </FilterButton>
-          <FilterButton 
-            active={filter === 'web'} 
-            onClick={() => setFilter('web')}
-          >
-            Web
-          </FilterButton>
-          <FilterButton 
-            active={filter === 'mobile'} 
-            onClick={() => setFilter('mobile')}
-          >
-            Mobile
-          </FilterButton>
+          {categories.map(category => (
+            <FilterButton
+              key={category.id}
+              $active={filter === category.id}
+              onClick={() => setFilter(category.id)}
+            >
+              {category.label}
+            </FilterButton>
+          ))}
         </ProjectFilter>
-        
+
         <AnimatePresence>
           {filteredProjects.length > 0 ? (
             <ProjectsGrid
@@ -361,8 +325,8 @@ const Projects = () => {
             </NoResults>
           )}
         </AnimatePresence>
-      </ProjectsContent>
-    </ProjectsContainer>
+      </Container>
+    </Section>
   );
 };
 

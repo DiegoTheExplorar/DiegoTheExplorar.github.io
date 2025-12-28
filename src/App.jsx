@@ -8,13 +8,14 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 import Education from './pages/Education';
-import Skills from './pages/Skills';
+
 import Certifications from './pages/Certifications';
+import RetroGame from './pages/RetroGame';
 import './App.css';
 
 const App = () => {
   return (
-    <Router>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Navbar />
       <div className="app-container">
         <main className="main-content">
@@ -25,8 +26,9 @@ const App = () => {
               <Route path="/projects" element={<Projects />} />
               <Route path="/experience" element={<Experience />} />
               <Route path="/education" element={<Education />} />
-              <Route path="/skills" element={<Skills />} />
+
               <Route path="/certifications" element={<Certifications />} />
+              <Route path="/game" element={<RetroGame />} />
             </Routes>
           </AnimatePresence>
         </main>

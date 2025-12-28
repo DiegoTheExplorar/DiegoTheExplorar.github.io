@@ -3,37 +3,8 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaLaptopCode, FaFlask, FaRobot } from 'react-icons/fa';
 
-const ExperienceContainer = styled.section`
-  min-height: 100vh;
-  padding: 100px 20px;
-  
-  @media (max-width: 768px) {
-    padding: 80px 20px;
-  }
-`;
-
-const ExperienceContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-`;
-
-const SectionTitle = styled(motion.h2)`
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  text-align: center;
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -15px;
-    width: 80px;
-    height: 4px;
-    background: var(--primary-color);
-  }
-`;
+import { Section, Container, SectionTitle } from '../components/common/Layout';
+import SEO from '../components/common/SEO';
 
 const TimelineContainer = styled(motion.div)`
   position: relative;
@@ -165,11 +136,11 @@ const Experience = () => {
       }
     }
   };
-  
+
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
@@ -177,7 +148,7 @@ const Experience = () => {
       }
     }
   };
-  
+
   const experienceData = [
     {
       title: "AI Engineer",
@@ -205,10 +176,11 @@ const Experience = () => {
       position: 'right'
     }
   ];
-  
+
   return (
-    <ExperienceContainer id="experience">
-      <ExperienceContent>
+    <Section id="experience">
+      <SEO title="Experience" description="My professional experience and work history in AI and software development." />
+      <Container>
         <SectionTitle
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -216,7 +188,7 @@ const Experience = () => {
         >
           Professional Experience
         </SectionTitle>
-        
+
         <TimelineContainer
           variants={containerVariants}
           initial="hidden"
@@ -234,7 +206,7 @@ const Experience = () => {
                 <h3>{exp.title}</h3>
                 <h4>
                   {exp.company === 'Carecam' ? (
-                    <a href="https://carecam.ai" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'underline'}}>
+                    <a href="https://carecam.ai" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
                       {exp.company}
                     </a>
                   ) : (
@@ -250,8 +222,8 @@ const Experience = () => {
             </TimelineItem>
           ))}
         </TimelineContainer>
-      </ExperienceContent>
-    </ExperienceContainer>
+      </Container>
+    </Section>
   );
 };
 

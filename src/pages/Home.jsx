@@ -106,6 +106,18 @@ const IntroText = styled(motion.div)`
   }
 `;
 
+const HintText = styled(motion.p)`
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  opacity: 0.7;
+  font-style: italic;
+  
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+`;
+
 const ButtonGroup = styled(motion.div)`
   display: flex;
   justify-content: center;
@@ -184,10 +196,55 @@ const BackgroundDecoration = styled.div`
   }
 `;
 
+import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import SEO from '../components/common/SEO';
+import ContactModal from '../components/ContactModal';
+
 const Home = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [particleSpeed, setParticleSpeed] = useState(1);
+  const pressTimer = useRef(null);
+  const navigate = useNavigate();
+
+  // Long Press Logic
+  const handlePressStart = () => {
+    // Speed up particles immediately
+    setParticleSpeed(8);
+
+    // Start timer to navigate
+    pressTimer.current = setTimeout(() => {
+      // Navigate after 2 seconds of holding
+      navigate('/game');
+    }, 2000);
+  };
+
+  const handlePressEnd = () => {
+    // Reset speed
+    setParticleSpeed(1);
+    // Cancel navigation if released too early
+    if (pressTimer.current) {
+      clearTimeout(pressTimer.current);
+    }
+  };
+
+  useEffect(() => {
+    // Clean up on unmount
+    return () => {
+      if (pressTimer.current) clearTimeout(pressTimer.current);
+    };
+  }, []);
+
   return (
-    <HomeContainer>
-      <ThreeParticles />
+    <HomeContainer
+      onMouseDown={handlePressStart}
+      onMouseUp={handlePressEnd}
+      onMouseLeave={handlePressEnd}
+      onTouchStart={handlePressStart}
+      onTouchEnd={handlePressEnd}
+    >
+      <SEO title="Home" description="Arvind Natarajan's Portfolio - AI Engineer & Full Stack Developer" />
+      <ThreeParticles speedMultiplier={particleSpeed} />
 
 
       <HomeContent>
@@ -232,13 +289,22 @@ const Home = () => {
           <Button to="/projects" className="primary">
             View Projects <FaArrowRight />
           </Button>
-          <Button to="/contact" className="secondary">
+          <Button as="button" onClick={() => setIsContactModalOpen(true)} className="secondary">
             Contact Me
           </Button>
         </ButtonGroup>
+
+        <HintText
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+        >
+          (Press and hold anywhere for a surprise...)
+        </HintText>
       </HomeContent>
 
       <BackgroundDecoration />
+      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
     </HomeContainer>
   );
 };

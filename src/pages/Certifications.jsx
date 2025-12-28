@@ -3,36 +3,8 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaCertificate, FaExternalLinkAlt } from 'react-icons/fa';
 
-const CertificationsContainer = styled.section`
-  padding: 60px 20px;
-
-  @media (max-width: 768px) {
-    padding: 40px 20px;
-  }
-`;
-
-const CertificationsContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-`;
-
-const SectionTitle = styled(motion.h2)`
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  text-align: center;
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -10px;
-    width: 80px;
-    height: 4px;
-    background: var(--primary-color);
-  }
-`;
+import { Section, Container, SectionTitle } from '../components/common/Layout';
+import SEO from '../components/common/SEO';
 
 const CertificationsDescription = styled(motion.p)`
   text-align: center;
@@ -204,8 +176,9 @@ const Certifications = () => {
   };
 
   return (
-    <CertificationsContainer id="certifications">
-      <CertificationsContent>
+    <Section id="certifications">
+      <SEO title="Certifications" description="My professional certifications and awards." />
+      <Container>
         <SectionTitle
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -230,7 +203,7 @@ const Certifications = () => {
         >
           {certificationsData.map((certification) => (
             <CertificationCard
-              key={certification.title} // Ensure titles are unique or use another key
+              key={certification.title}
               variants={itemVariants}
             >
               <CertificateHeader>
@@ -258,8 +231,8 @@ const Certifications = () => {
             </CertificationCard>
           ))}
         </CertificationsGrid>
-      </CertificationsContent>
-    </CertificationsContainer>
+      </Container>
+    </Section>
   );
 };
 

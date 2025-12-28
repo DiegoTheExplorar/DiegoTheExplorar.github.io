@@ -3,36 +3,8 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaUniversity, FaGraduationCap, FaTrophy, FaUsers } from 'react-icons/fa';
 
-const EducationContainer = styled.section`
-  padding: 60px 20px;
-  
-  @media (max-width: 768px) {
-    padding: 40px 20px;
-  }
-`;
-
-const EducationContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-`;
-
-const SectionTitle = styled(motion.h2)`
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  text-align: center;
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -10px;
-    width: 80px;
-    height: 4px;
-    background: var(--primary-color);
-  }
-`;
+import { Section, Container, SectionTitle } from '../components/common/Layout';
+import SEO from '../components/common/SEO';
 
 const EducationCards = styled(motion.div)`
   display: grid;
@@ -50,45 +22,54 @@ const EducationCard = styled(motion.div)`
 `;
 
 const CardHeader = styled.div`
-  padding: 25px 25px 15px;
+  padding: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
   position: relative;
   
   .icon {
-    position: absolute;
-    top: -10
-    5px;
-    left: 30px;
-    width: 50px;
-    height: 50px;
+    width: 60px; // Slightly larger for better visibility
+    height: 60px;
+    flex-shrink: 0;
     background-color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     color: var(--dark-text);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 2;
+  }
+
+  .content-wrapper {
+    flex: 1;
   }
   
   h3 {
     font-size: 1.8rem;
-    margin: 10px 0;
+    margin: 0 0 10px 0;
     color: var(--primary-color);
+    line-height: 1.2;
   }
   
   h4 {
     font-size: 1.2rem;
     color: var(--text-color);
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   
   .date {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--accent-color);
     margin-bottom: 15px;
     display: block;
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 0;
   }
 `;
 
@@ -251,11 +232,11 @@ const Education = () => {
       }
     }
   };
-  
+
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
@@ -263,18 +244,18 @@ const Education = () => {
       }
     }
   };
-  
+
   const itemVariants = {
     hidden: { opacity: 0, x: -10 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: {
         duration: 0.4
       }
     }
   };
-  
+
   const educationData = [
     {
       id: 1,
@@ -322,10 +303,11 @@ const Education = () => {
       ]
     }
   ];
-  
+
   return (
-    <EducationContainer id="education">
-      <EducationContent>
+    <Section id="education">
+      <SEO title="Education" description="My academic background and achievements." />
+      <Container>
         <SectionTitle
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -333,7 +315,7 @@ const Education = () => {
         >
           Education
         </SectionTitle>
-        
+
         <EducationCards
           variants={containerVariants}
           initial="hidden"
@@ -346,12 +328,14 @@ const Education = () => {
             >
               <CardHeader>
                 <div className="icon">{education.icon}</div>
-                <h3>{education.institution}</h3>
-                <h4>{education.degree}</h4>
-                <span className="date">{education.date}</span>
-                <p>{education.description}</p>
+                <div className="content-wrapper">
+                  <h3>{education.institution}</h3>
+                  <h4>{education.degree}</h4>
+                  <span className="date">{education.date}</span>
+                  <p>{education.description}</p>
+                </div>
               </CardHeader>
-              
+
               <CardBody>
                 <h4>Achievements & Activities</h4>
                 <AchievementsList>
@@ -374,8 +358,8 @@ const Education = () => {
             </EducationCard>
           ))}
         </EducationCards>
-      </EducationContent>
-    </EducationContainer>
+      </Container>
+    </Section>
   );
 };
 

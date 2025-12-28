@@ -2,39 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FaUser, FaCode, FaLaptopCode } from 'react-icons/fa';
-import profileImage from '../assets/profile.jpg'; // Make sure to add your image to this path
-
-const AboutContainer = styled.section`
-  min-height: 100vh;
-  padding: 100px 20px;
-  
-  @media (max-width: 768px) {
-    padding: 80px 20px;
-  }
-`;
-
-const AboutContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-`;
-
-const SectionTitle = styled(motion.h2)`
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  text-align: center;
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -15px;
-    width: 80px;
-    height: 4px;
-    background: var(--primary-color);
-  }
-`;
+import profileImage from '../assets/profile.jpg';
+import { Section, Container, SectionTitle, Card } from '../components/common/Layout';
+import SEO from '../components/common/SEO';
 
 const AboutGrid = styled.div`
   display: grid;
@@ -68,7 +38,7 @@ const ProfileImage = styled(motion.img)`
   height: auto;
   border-radius: 15px;
   object-fit: cover;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   justify-self: center;
 `;
 
@@ -84,17 +54,9 @@ const AboutCards = styled.div`
   }
 `;
 
-const AboutCard = styled(motion.div)`
-  background-color: var(--card-bg);
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: var(--box-shadow);
-  transition: transform 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-10px);
-  }
-  
+const StyledCard = styled(Card)`
+  text-align: center;
+
   .icon {
     font-size: 2.5rem;
     color: var(--primary-color);
@@ -124,7 +86,7 @@ const About = () => {
       },
     },
   };
-  
+
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -133,10 +95,11 @@ const About = () => {
       transition: { duration: 0.5 }
     }
   };
-  
+
   return (
-    <AboutContainer id="about">
-      <AboutContent>
+    <Section id="about">
+      <SEO title="About" description="Learn more about Arvind Natarajan, his background, and expertise." />
+      <Container>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -149,7 +112,7 @@ const About = () => {
           >
             About Me
           </SectionTitle>
-          
+
           <AboutGrid>
             <ProfileImage
               src={profileImage}
@@ -162,24 +125,24 @@ const About = () => {
             <AboutInfo variants={itemVariants}>
               <h3>Arvind Natarajan</h3>
               <p>
-                Bachelor of Computing in Computer Science student at the National University of Singapore (NUS). 
+                Bachelor of Computing in Computer Science student at the National University of Singapore (NUS).
                 AI Engineer at Carecam (Singapore). Research Assistant at NUS.
               </p>
               <p>
-                I'm passionate about artificial intelligence, particularly in developing practical 
-                solutions that solve real-world problems. My interests span across machine learning, 
+                I'm passionate about artificial intelligence, particularly in developing practical
+                solutions that solve real-world problems. My interests span across machine learning,
                 computer vision, and full-stack development.
               </p>
               <p>
-                When I'm not coding, I enjoy exploring new technologies, attending tech meetups, 
+                When I'm not coding, I enjoy exploring new technologies, attending tech meetups,
                 and contributing to open-source projects.
               </p>
             </AboutInfo>
           </AboutGrid>
-          
+
           <AboutCards>
-            <AboutCard 
-              variants={itemVariants} 
+            <StyledCard
+              variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
@@ -188,13 +151,13 @@ const About = () => {
               </div>
               <h4>AI Engineer</h4>
               <p>
-                At Carecam, I develop cutting-edge AI solutions for healthcare applications, 
+                At Carecam, I develop cutting-edge AI solutions for healthcare applications,
                 focusing on computer vision and mobility assessment technologies.
               </p>
-            </AboutCard>
-            
-            <AboutCard 
-              variants={itemVariants} 
+            </StyledCard>
+
+            <StyledCard
+              variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
@@ -206,10 +169,10 @@ const About = () => {
                 I build responsive, user-friendly applications using modern frameworks and technologies,
                 with a focus on clean code and best practices.
               </p>
-            </AboutCard>
-            
-            <AboutCard 
-              variants={itemVariants} 
+            </StyledCard>
+
+            <StyledCard
+              variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
@@ -218,14 +181,14 @@ const About = () => {
               </div>
               <h4>Computer Science Student</h4>
               <p>
-                Currently pursuing my Bachelor's degree at NUS, where I'm developing a solid 
+                Currently pursuing my Bachelor's degree at NUS, where I'm developing a solid
                 foundation in algorithms, data structures, and software engineering.
               </p>
-            </AboutCard>
+            </StyledCard>
           </AboutCards>
         </motion.div>
-      </AboutContent>
-    </AboutContainer>
+      </Container>
+    </Section>
   );
 };
 

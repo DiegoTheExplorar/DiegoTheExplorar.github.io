@@ -116,27 +116,27 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const location = useLocation();
-  
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  
+
   useEffect(() => {
     // Close mobile menu when route changes
     setIsOpen(false);
   }, [location]);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   return (
-    <NavContainer style={{ 
+    <NavContainer style={{
       background: scrollPosition > 50 ? 'rgba(18, 18, 18, 0.9)' : 'rgba(18, 18, 18, 0)',
       boxShadow: scrollPosition > 50 ? '0 2px 10px rgba(0, 0, 0, 0.3)' : 'none'
     }}>
@@ -144,7 +144,7 @@ const Navbar = () => {
         <Logo to="/">
           Arvind<span>Natarajan</span>
         </Logo>
-        
+
         <LinksContainer>
           <NavLink to="/" className={location.pathname === '/' ? 'active' : ''}>
             Home
@@ -161,19 +161,17 @@ const Navbar = () => {
           <NavLink to="/education" className={location.pathname === '/education' ? 'active' : ''}>
             Education
           </NavLink>
-          <NavLink to="/skills" className={location.pathname === '/skills' ? 'active' : ''}>
-            Skills
-          </NavLink>
+
           <NavLink to="/certifications" className={location.pathname === '/certifications' ? 'active' : ''}>
             Certifications
           </NavLink>
         </LinksContainer>
-        
+
         <MobileIcon onClick={toggleMenu}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </MobileIcon>
       </NavContent>
-      
+
       <AnimatePresence>
         {isOpen && (
           <MobileMenu
@@ -197,9 +195,7 @@ const Navbar = () => {
             <MobileNavLink to="/education" className={location.pathname === '/education' ? 'active' : ''}>
               Education
             </MobileNavLink>
-            <MobileNavLink to="/skills" className={location.pathname === '/skills' ? 'active' : ''}>
-              Skills
-            </MobileNavLink>
+
             <MobileNavLink to="/certifications" className={location.pathname === '/certifications' ? 'active' : ''}>
               Certifications
             </MobileNavLink>

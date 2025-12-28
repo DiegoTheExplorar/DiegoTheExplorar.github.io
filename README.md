@@ -1,12 +1,39 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal portfolio website built with React, Vite, and Styled Components.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern UI/UX**: Designed with a focus on aesthetics, smooth animations (Framer Motion), and responsive layout.
+- **Interactive Particle Background**: Custom 3D particle system using `@react-three/fiber` that reacts to mouse movement.
+- **Hidden Retro Game**: A fully playable "Space Invaders" style game hidden as an Easter egg (hold press on Home screen). Features progressive difficulty, collision detection, and score tracking.
+- **SEO Optimized**: dynamic metadata management using `react-helmet-async`, structured data, and sitemap generation.
+- **Performance**: Optimized builds, lazy loading, and efficient re-rendering strategies.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Core**: React, Vite
+- **Styling**: Styled Components, Framer Motion
+- **3D/Graphics**: Three.js, React Three Fiber
+- **Deployment**: GitHub Pages
+
+## Getting Started
+
+1.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+2.  **Run development server**:
+    ```bash
+    npm run dev
+    ```
+
+3.  **Build for production**:
+    ```bash
+    npm run build
+    ```
+
+## License
+
+MIT
