@@ -1,0 +1,53 @@
+# Arvind Natarajan - AI Engineer & Full Stack Developer
+
+## Professional Profile
+Arvind Natarajan is a Computer Science undergraduate at the National University of Singapore (NUS) and an AI Engineer at Carecam. He specializes in:
+- **Artificial Intelligence**: Computer Vision, Natural Language Processing (NLP), PyTorch, Mediapipe, Transformers.
+- **Full Stack Development**: React, Vite, Node.js, Firebase, PostgreSQL.
+- **Mobile Development**: Kotlin Multiplatform Mobile (KMM).
+
+## Core Skills
+- **Languages**: Python, JavaScript, TypeScript, Kotlin, C++, SQL.
+- **Frameworks & Libraries**: PyTorch, React, Tailwind CSS, Framer Motion, Three.js.
+- **Tools & DevOps**: Docker, Kubernetes, Git, GitHub Actions, Azure.
+
+## Projects
+
+### Klingon Heads
+- **Description**: An AI-driven English to Klingon translator web application.
+- **Tech Stack**: React, PyTorch, Hugging Face Transformers (T5), GRU models.
+- **Link**: [https://klingon-heads.vercel.app/](https://klingon-heads.vercel.app/)
+
+### MapMyMemories
+- **Description**: A geo-tagging photo gallery app with Google Auth and dark mode.
+- **Tech Stack**: React, Firebase, Tailwind CSS.
+- **Link**: [https://map-my-memories-three.vercel.app/](https://map-my-memories-three.vercel.app/)
+
+### Telegram Wellness Bot
+- **Description**: A therapy support bot using the Mixtral-8x7B LLM.
+- **Tech Stack**: Python, Azure, Telegram API.
+
+## Experience
+
+### Carecam (AI Engineer)
+*Dec 2023 - Present*
+- Developing computer vision solutions for healthcare.
+- Building mobile applications using Kotlin Multiplatform.
+
+### National University of Singapore (Research Assistant)
+*Jan 2024 - Present*
+- researching advanced NLP models and architectures.
+
+## Education
+- **National University of Singapore (NUS)**: Bachelor of Computing in Computer Science (2023 - 2027).
+- **St. Joseph's Institution**: International Baccalaureate Diploma.
+
+## Certifications
+- NUS Health HacK 2025 - Top 3 (InterSystems Track)
+- Orbital Achievement - Apollo 11 (Top Level)
+- DevOps, MLOps, and DataOps (Duke University)
+
+## Contact
+- **GitHub**: [DiegoTheExplorar](https://github.com/DiegoTheExplorar)
+- **LinkedIn**: [Arvind Natarajan](https://www.linkedin.com/in/arvind-natarajan-65aa77290/)
+- **Email**: arvindnatarajan2002@gmail.com
