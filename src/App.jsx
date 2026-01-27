@@ -11,16 +11,9 @@ import Education from './pages/Education';
 
 import Certifications from './pages/Certifications';
 import './App.css';
-import Analytics, { initGA } from './components/common/Analytics';
-
-// Initialize Google Analytics
-// You must replace "YOUR_MEASUREMENT_ID" in src/components/common/Analytics.jsx
-initGA();
-
 const App = () => {
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <Analytics />
       <Navbar />
       <div className="app-container">
         <main className="main-content">

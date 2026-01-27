@@ -32,7 +32,7 @@ const TimelineItem = styled(motion.div)`
   position: relative;
   background-color: inherit;
   width: 50%;
-  left: ${props => props.position === 'left' ? '0' : '50%'};
+  left: ${props => props.$position === 'left' ? '0' : '50%'};
   
   @media (max-width: 768px) {
     width: 100%;
@@ -46,8 +46,8 @@ const TimelineItem = styled(motion.div)`
     position: absolute;
     width: 20px;
     height: 20px;
-    right: ${props => props.position === 'left' ? '-10px' : 'auto'};
-    left: ${props => props.position === 'right' ? '-10px' : 'auto'};
+    right: ${props => props.$position === 'left' ? '-10px' : 'auto'};
+    left: ${props => props.$position === 'right' ? '-10px' : 'auto'};
     background: var(--bg-color);
     border: 3px solid var(--primary-color);
     top: 22px;
@@ -79,8 +79,8 @@ const TimelineContent = styled.div`
     height: 40px;
     background-color: var(--primary-color);
     top: -20px;
-    right: ${props => props.position === 'left' ? '20px' : 'auto'};
-    left: ${props => props.position === 'right' ? '20px' : 'auto'};
+    right: ${props => props.$position === 'left' ? '20px' : 'auto'};
+    left: ${props => props.$position === 'right' ? '20px' : 'auto'};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,10 +220,10 @@ const Experience = () => {
           {experienceData.map((exp, index) => (
             <TimelineItem
               key={index}
-              position={exp.position}
+              $position={exp.position}
               variants={itemVariants}
             >
-              <TimelineContent position={exp.position}>
+              <TimelineContent $position={exp.position}>
                 <div className="icon">{exp.icon}</div>
                 <span className="date">{exp.period}</span>
                 <h3>{exp.title}</h3>

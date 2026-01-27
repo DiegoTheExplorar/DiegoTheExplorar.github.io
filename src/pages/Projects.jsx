@@ -132,9 +132,9 @@ const ProjectLink = styled.a`
   display: inline-flex;
   align-items: center;
   padding: 8px 15px;
-  background-color: ${props => props.primary === "true" ? 'var(--primary-color)' : 'transparent'};
-  color: ${props => props.primary === "true" ? 'var(--dark-text)' : 'var(--text-color)'};
-  border: ${props => props.primary === "true" ? 'none' : '1px solid var(--text-color)'};
+  background-color: ${props => props.$primary === "true" ? 'var(--primary-color)' : 'transparent'};
+  color: ${props => props.$primary === "true" ? 'var(--dark-text)' : 'var(--text-color)'};
+  border: ${props => props.$primary === "true" ? 'none' : '1px solid var(--text-color)'};
   border-radius: 4px;
   font-size: 0.9rem;
   transition: all 0.3s ease;
@@ -145,8 +145,8 @@ const ProjectLink = styled.a`
   
   &:hover {
     transform: translateY(-3px);
-    background-color: ${props => props.primary === "true" ? 'var(--accent-color)' : 'rgba(255, 255, 255, 0.1)'};
-    box-shadow: ${props => props.primary === "true" ? '0 5px 15px rgba(255, 107, 107, 0.3)' : 'none'};
+    background-color: ${props => props.$primary === "true" ? 'var(--accent-color)' : 'rgba(255, 255, 255, 0.1)'};
+    box-shadow: ${props => props.$primary === "true" ? '0 5px 15px rgba(255, 107, 107, 0.3)' : 'none'};
   }
 `;
 
@@ -310,7 +310,7 @@ const Projects = () => {
                         </ProjectLink>
                       )}
                       {project.live && (
-                        <ProjectLink href={project.live} target="_blank" rel="noopener noreferrer" primary="true">
+                        <ProjectLink href={project.live} target="_blank" rel="noopener noreferrer" $primary="true">
                           <FaExternalLinkAlt /> Live Demo
                         </ProjectLink>
                       )}
