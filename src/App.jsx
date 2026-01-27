@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
@@ -10,12 +10,17 @@ import Experience from './pages/Experience';
 import Education from './pages/Education';
 
 import Certifications from './pages/Certifications';
-import RetroGame from './pages/RetroGame';
 import './App.css';
+import Analytics, { initGA } from './components/common/Analytics';
+
+// Initialize Google Analytics
+// You must replace "YOUR_MEASUREMENT_ID" in src/components/common/Analytics.jsx
+initGA();
 
 const App = () => {
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Analytics />
       <Navbar />
       <div className="app-container">
         <main className="main-content">
@@ -28,7 +33,6 @@ const App = () => {
               <Route path="/education" element={<Education />} />
 
               <Route path="/certifications" element={<Certifications />} />
-              <Route path="/game" element={<RetroGame />} />
             </Routes>
           </AnimatePresence>
         </main>

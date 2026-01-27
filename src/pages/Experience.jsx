@@ -151,13 +151,36 @@ const Experience = () => {
 
   const experienceData = [
     {
+      title: "DevSecOps Engineer Intern",
+      company: "IBM",
+      location: "Singapore",
+      period: "Jan 2026 - Present",
+      description: [
+        "Working on real-life hybrid cloud applications in a tech consulting environment"
+      ],
+      icon: <FaLaptopCode />,
+      position: 'left'
+    },
+    {
+      title: "Data Analytics Intern",
+      company: "General Reinsurance AG",
+      location: "Singapore",
+      period: "Dec 2025 - Jan 2026",
+      description: [
+        "Conducted data analytics on insurance policy and claims data using R"
+      ],
+      icon: <FaFlask />,
+      position: 'right'
+    },
+    {
       title: "AI Engineer",
       company: "Carecam",
       location: "Singapore",
-      period: "Dec 2023 - Present",
+      period: "Dec 2023 - Dec 2025",
       description: [
-        "Developing in Kotlin Multiplatform Mobile applications targeting iOS",
-        "Developing a computer vision solutions"
+        "Implemented CV algorithms and proprietary algorithms in KMP for iOS use cases",
+        "Developed POCs in Three.js and Swift, some of which made it to production",
+        "Created end-to-end cloud-native AI video processing pipeline"
       ],
       icon: <FaRobot />,
       position: 'left'
@@ -166,7 +189,7 @@ const Experience = () => {
       title: "AI Research Assistant",
       company: "National University of Singapore",
       location: "Singapore",
-      period: "Jan 2024 - Present",
+      period: "May 2024 - Aug 2024",
       description: [
         "Developing and implementing advanced machine learning models for natural language processing tasks",
         "Conducting research on state-of-the-art AI architectures and methodologies",

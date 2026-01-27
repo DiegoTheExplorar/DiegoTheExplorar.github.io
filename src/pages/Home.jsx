@@ -106,17 +106,7 @@ const IntroText = styled(motion.div)`
   }
 `;
 
-const HintText = styled(motion.p)`
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: var(--accent-color);
-  opacity: 0.7;
-  font-style: italic;
-  
-  @media (max-width: 768px) {
-    margin-top: 20px;
-  }
-`;
+
 
 const ButtonGroup = styled(motion.div)`
   display: flex;
@@ -293,14 +283,6 @@ const Home = () => {
             Contact Me
           </Button>
         </ButtonGroup>
-
-        <HintText
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-        >
-          (Press and hold anywhere for a surprise...)
-        </HintText>
       </HomeContent>
 
       <BackgroundDecoration />
