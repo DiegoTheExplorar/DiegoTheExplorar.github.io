@@ -186,55 +186,17 @@ const BackgroundDecoration = styled.div`
   }
 `;
 
-import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import SEO from '../components/common/SEO';
 import ContactModal from '../components/ContactModal';
 
 const Home = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [particleSpeed, setParticleSpeed] = useState(1);
-  const pressTimer = useRef(null);
-  const navigate = useNavigate();
-
-  // Long Press Logic
-  const handlePressStart = () => {
-    // Speed up particles immediately
-    setParticleSpeed(8);
-
-    // Start timer to navigate
-    pressTimer.current = setTimeout(() => {
-      // Navigate after 2 seconds of holding
-      navigate('/game');
-    }, 2000);
-  };
-
-  const handlePressEnd = () => {
-    // Reset speed
-    setParticleSpeed(1);
-    // Cancel navigation if released too early
-    if (pressTimer.current) {
-      clearTimeout(pressTimer.current);
-    }
-  };
-
-  useEffect(() => {
-    // Clean up on unmount
-    return () => {
-      if (pressTimer.current) clearTimeout(pressTimer.current);
-    };
-  }, []);
 
   return (
-    <HomeContainer
-      onMouseDown={handlePressStart}
-      onMouseUp={handlePressEnd}
-      onMouseLeave={handlePressEnd}
-      onTouchStart={handlePressStart}
-      onTouchEnd={handlePressEnd}
-    >
+    <HomeContainer>
       <SEO title="Home" description="Arvind Natarajan's Portfolio - AI Engineer & Full Stack Developer" />
-      <ThreeParticles speedMultiplier={particleSpeed} />
+      <ThreeParticles speedMultiplier={1} />
 
 
       <HomeContent>
@@ -259,7 +221,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <Typewriter text="Building the future with AI" speed={50} />
+          <Typewriter />
         </TypewriterContainer>
 
         <IntroText
